@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  /* Taluq Dark Theme Palette */
+  --color-taluq-green: #22c55e;
+  /* A vibrant, clean green (emerald-500) */
+  --color-taluq-gray: #1f2937;
+  /* Gray-800 */
+  --color-taluq-darker: #111827;
+  /* Gray-900 for sidebars/headers */
+
+  --font-sans: "Inter", ui-sans-serif, system-ui;
+}
+button{
+  @apply cursor-pointer border-2 border-taluq-green bg-taluq-green text-white px-4 py-2 rounded-lg transition-all ease-in-out duration-300 hover:bg-transparent hover:text-taluq-green hover:border-taluq-green
+}
+body {
+  @apply text-black font-stretch-ultra-expanded;
+}
+
+.arrivedMessages {
+  @apply rounded-b-4xl rounded-tr-4xl border-taluq-green bg-white text-taluq-darker w-full max-w-fit min-w-0 h-auto border-2 p-1 overflow-hidden wrap-break-word whitespace-pre-wrap px-3 py-4;
+}
+
+.deliveredMessages {
+  @apply rounded-bl-4xl ml-auto border-taluq-green bg-white text-taluq-darker rounded-t-4xl w-full max-w-fit min-w-0 h-auto border p-1 overflow-hidden wrap-break-word whitespace-pre-wrap px-3 py-4;
+}
+
+input {
+  @apply border-2 border-black text-black outline-0 focus:ring-2 focus:ring-taluq-green focus:border-transparent transition-all ease-in-out duration-300 rounded-lg px-4 py-2 w-full
+}
+
+.chat-bullet {
+  @apply flex items-center  rounded-2xl active:bg-gray-200 cursor-pointer border-gray-500  gap-4 p-2 hover:bg-gray-200 transition-colors duration-200 ease-in-out;
+}
+
+.contact-profile-pic {
+  @apply border rounded-full overflow-hidden min-w-14 min-h-14
+}
