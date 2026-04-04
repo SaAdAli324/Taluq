@@ -26,8 +26,8 @@ body {
   @apply rounded-bl-4xl ml-auto border-taluq-green bg-white text-taluq-darker rounded-t-4xl w-full max-w-fit min-w-0 h-auto border p-1 overflow-hidden wrap-break-word whitespace-pre-wrap px-3 py-4;
 }
 
-input {
-  @apply border-2 border-black text-black outline-0 focus:ring-2 focus:ring-taluq-green focus:border-transparent transition-all ease-in-out duration-300 rounded-lg px-4 py-2 w-full
+.chat-input {
+  @apply border border-gray-500 text-black outline-0 focus:ring-2  focus:ring-taluq-green focus:border-transparent transition-all ease-in-out duration-300 rounded-3xl px-4 py-2 w-full
 }
 
 .chat-bullet {
