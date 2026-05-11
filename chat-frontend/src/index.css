@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@plugin "tailwind-scrollbar";
+
 
 @theme {
   /* Taluq Dark Theme Palette */
@@ -11,29 +13,51 @@
 
   --font-sans: "Inter", ui-sans-serif, system-ui;
 }
-button{
+body{
+  @apply font-mono
+}
+.logoutBtn{
+  @apply cursor-pointer border-2  bg-red-500 text-white px-4 py-2 rounded-lg transition-all ease-in-out duration-300 hover:bg-transparent hover:text-red-500 hover:border-red-500
+}
+.saveBtn{
   @apply cursor-pointer border-2 border-taluq-green bg-taluq-green text-white px-4 py-2 rounded-lg transition-all ease-in-out duration-300 hover:bg-transparent hover:text-taluq-green hover:border-taluq-green
 }
 body {
   @apply text-black font-stretch-ultra-expanded;
 }
 
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-in-out forwards;
+}
+
 .arrivedMessages {
-  @apply rounded-b-4xl rounded-tr-4xl border-taluq-green bg-white text-taluq-darker w-full max-w-fit min-w-0 h-auto border-2 p-1 overflow-hidden wrap-break-word whitespace-pre-wrap px-3 py-4;
+  @apply rounded-b-4xl transition-all duration-500 ease-in-out rounded-tr-4xl border-taluq-green bg-white text-taluq-darker w-full max-w-fit min-w-0 h-auto border-2 p-1 overflow-hidden wrap-break-word whitespace-pre-wrap px-3 py-4;
 }
 
 .deliveredMessages {
-  @apply rounded-bl-4xl ml-auto border-taluq-green bg-white text-taluq-darker rounded-t-4xl w-full max-w-fit min-w-0 h-auto border p-1 overflow-hidden wrap-break-word whitespace-pre-wrap px-3 py-4;
+  @apply rounded-bl-4xl transition-all duration-500 ease-in-out ml-auto border-taluq-green bg-white text-taluq-darker rounded-t-4xl w-full max-w-fit min-w-0 h-auto border p-1 overflow-hidden wrap-break-word whitespace-pre-wrap px-3 py-4;
 }
 
 .chat-input {
-  @apply border border-gray-500 text-black outline-0 focus:ring-2  focus:ring-taluq-green focus:border-transparent transition-all ease-in-out duration-300 rounded-3xl px-4 py-2 w-full
+  @apply border border-gray-500 text-black outline-0 focus:ring-2   transition-all ease-in-out duration-300 rounded-3xl px-4 py-2 w-full
 }
 
 .chat-bullet {
-  @apply flex items-center  rounded-2xl active:bg-gray-200 cursor-pointer border-gray-500  gap-4 p-2 hover:bg-gray-200 transition-colors duration-200 ease-in-out;
+  @apply flex items-center  rounded-2xl active:bg-gray-200 cursor-pointer border-gray-500  gap-4 p-2 hover:bg-gray-200 duration-200 ease-in-out;
 }
 
 .contact-profile-pic {
-  @apply border rounded-full overflow-hidden min-w-14 min-h-14
+  @apply border rounded-full overflow-hidden max-w-14 max-h-14
 }

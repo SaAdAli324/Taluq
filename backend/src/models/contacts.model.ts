@@ -14,7 +14,6 @@ const UserContacts = new mongoose.Schema<Icontacts>({
         ref: "User",
         required: true
     },
-
     savedName: {
         type: String,
         default: "",

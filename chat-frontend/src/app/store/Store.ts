@@ -1,11 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import uiReducer from '../../features/ui/UiSlice';
 import uiAuthslice from './slices/authSlices'
-
+import chatReducer from './slices/chatSlice'
 export const store = configureStore({
   reducer: {
     ui: uiReducer,
-    protectRoutes: uiAuthslice
+    protectRoutes: uiAuthslice,
+    contact:chatReducer
   },
 });
 

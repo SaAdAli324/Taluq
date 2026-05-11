@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
-
-const messageSchema = new mongoose.Schema({
+import type { TypeMessage } from "../types/messageType.js";
+const messageSchema = new mongoose.Schema<TypeMessage>({
     conversationId:{
         type: mongoose.Schema.Types.ObjectId,
         ref:'Conversation'
@@ -14,6 +14,22 @@ const messageSchema = new mongoose.Schema({
         required:true
     },
     seen:{
+        type:Boolean,
+        default:false
+    },
+    deleted:{
+        type:Boolean,
+        default:false
+    },
+    isdelivered:{
+        type:Boolean,
+        default:false
+    },
+    issend:{
+        type:Boolean,
+        default:false
+    },
+    isEdited:{
         type:Boolean,
         default:false
     }

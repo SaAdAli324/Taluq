@@ -5,6 +5,7 @@ import type { Request, Response, NextFunction } from "express";
 
 export const searchUser = catchAsync(async(req:Request , res:Response , next:NextFunction) => {
     const {_id}= req.body
+    
     if(!_id){
         throw next(new AppError("no user found", 404))
     }

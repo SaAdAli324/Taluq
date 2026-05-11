@@ -30,22 +30,14 @@ const LogIn = () => {
     }
   };
 
-  const continueWithGoogle=async()=>{
-try {
-  const response = await api.post("api/")
-      dispatch(login(response.data.user));
-
-} catch (error) {
-  
-}
-  }
+ 
 
   return (
     <div className="bg-black/70 w-full h-screen flex items-center justify-center">
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="flex   px-4 py-8 rounded-2xl  w-sm bg-white flex-col gap-4"
-       >
+      >
         <h2 className="text-center text-taluq-green font-bold text-xl">
           Log In
         </h2>
@@ -77,9 +69,9 @@ try {
         >
           Log in
         </button>
-   <button type="button" onClick={()=> continueWithGoogle} className="!bg-white !text-black !border-0 flex items-center justify-center gap-1">continue with google
-                <FcGoogle className="text-lg"/>
-            </button>
+        <a href="http://localhost:5000/api/auth/google" className="!bg-white !text-black !border-0 flex items-center justify-center gap-1">continue with google
+          <FcGoogle className="text-lg" />
+        </a>
         <p>
           {" "}
           don't have an account?
@@ -90,7 +82,7 @@ try {
         </p>
 
       </form>
-    
+
     </div>
   );
 };

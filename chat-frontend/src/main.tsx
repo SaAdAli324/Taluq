@@ -11,6 +11,11 @@ import Profile from './features/profile/Profile.tsx'
 import { ProtectRoutes } from './protectedRoute/ProtectedRoute.tsx'
 import Home from './pages/Home.tsx'
 import AuthCheck from './components/AuthCheck.tsx'
+import UpdateModel from "./components/ui/UpdataModel.tsx"
+
+
+
+
 
 
 
@@ -27,8 +32,8 @@ const router = createBrowserRouter([
   {
     element: <ProtectRoutes />,
     children: [
-      { path: "/profile", element: <Profile /> },
-      { path: "/home", element: <Home /> }
+      { path: "/home", element: <Home /> },
+      {path:'/updateModel', element:<UpdateModel isOpen={true} title='update message' currentMessage='asdasdas' message='are you sure you want to update this message' onConfirm={()=>{}} onCancel={()=>{}} />}
     ]
   }
 ]);

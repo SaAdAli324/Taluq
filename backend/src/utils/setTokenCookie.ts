@@ -1,5 +1,4 @@
-
-import type { Response } from "express";
+import type { Response, Request } from "express";
 
 export const tokenCookie= {
    setCookie:(res: Response , token: string)=>{ res.cookie("token", token,{
@@ -9,7 +8,7 @@ export const tokenCookie= {
         maxAge: 30 * 24 * 60 * 60 * 1000
     })
     },
-    clearCookie:(res:Response )=>{
+    clearCookie:(req: Request, res:Response )=>{
         res.clearCookie('token',{
             httpOnly:true,
             secure:process.env.NODE_ENV ==="production",

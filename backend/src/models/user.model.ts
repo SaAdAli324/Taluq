@@ -6,7 +6,8 @@ export interface TypeSignUp extends TypeUser, Document { }
 const userSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     email: {
         type: String,
@@ -23,6 +24,10 @@ const userSchema = new mongoose.Schema({
        type:String,
        default:""
 
+    },  
+    isOnline: {
+       type:Boolean,
+       default:false
     },
 }, { timestamps: true })
 

@@ -3,19 +3,24 @@ import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Link } from "react-router";
 import api from "../../api";
-
+import { useDispatch } from "react-redux";
+import { login } from "../../app/store/slices/authSlices";
+import { useNavigate } from "react-router-dom";
 const SignUp = () => {
     const { register, handleSubmit, formState: { errors } } = useForm<SignUpSchema>({
         resolver: zodResolver(signUpSchema),
     })
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     const onSubmit =async (data: SignUpSchema) => {
         console.log(data)
         try {
             const response = await api.post("/api/auth/signup",data)
             console.log(response.data);
-            
-        } catch (error) {
-            console.log(error);
+                dispatch(login(response.data.user));
+                  navigate("/home");
+        } catch (error:any) {
+            console.log(error.response.data.message);
             
         }
     }

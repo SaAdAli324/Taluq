@@ -21,9 +21,10 @@ export const authServices = {
 
     async signUpService(name: string, email: string, password: string, profilePic?: string) {
         const existingUser = await User.findOne({ email })
+        const existingUserName = await User.findOne({ name })
 
-        if (existingUser) {
-            throw new AppError("User already exists", 400)
+        if (existingUser || existingUserName) {
+            throw new AppError("User already exists with this email or name", 400)
         }
 
         const hashedPass = await bcrypt.hash(password, 10)

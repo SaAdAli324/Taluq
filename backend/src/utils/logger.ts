@@ -1,11 +1,11 @@
 const logger = {
-    info:(message:string , meta?:object)=>{
+    info:(message:string , meta?:any)=>{
         console.log(`[INFO] ${new Date().toString()}- ${message}`,meta || "")
     },
-    warn:(message:string , meta?:object)=>{
+    warn:(message:string , meta?:any)=>{
         console.log(`[WARN] ${new Date().toString()}-${message}`, meta || "")
     },
-    error:(message:string , meta?:object)=>{
+    error:(message:string , meta?:any)=>{
         console.log(`[ERROR] ${new Date().toString()}`,meta || "")
     }
 }
